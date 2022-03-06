@@ -78,10 +78,18 @@ public class Client
 {
     public static void Main()
     {
-        AbstractFactory abstractFactory = new ConcreteFactory2();
+        // ConcreteFactory 1.
+        AbstractFactory abstractFactory = new ConcreteFactory1();
         AbstractProductA productA = abstractFactory.CreateProductA();
         productA.ShowA();
         AbstractProductB productB = abstractFactory.CreateProductB();
+        productB.ShowB();
+
+        // ConcreteFactory 2.
+        abstractFactory = new ConcreteFactory2();
+        productA = abstractFactory.CreateProductA();
+        productA.ShowA();
+        productB = abstractFactory.CreateProductB();
         productB.ShowB();
     }
 }
